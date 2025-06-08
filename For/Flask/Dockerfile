@@ -53,3 +53,15 @@ Outside world (including your browser) can’t reach it — even if Docker maps 
 So:
 
 You must use both --host=0.0.0.0 and -p 5000:5000 to make your app visible on localhost:5000.
+
+
+Why use 0.0.0.0?
+Normally, if you run Flask like this:
+
+bash
+Copy
+Edit
+flask run
+It binds to 127.0.0.1 — which means:
+
+It's only accessible inside the container.
