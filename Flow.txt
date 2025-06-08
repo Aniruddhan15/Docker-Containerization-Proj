@@ -14,6 +14,11 @@ Push image to dockerhub: docker push "id"/kkk:latest1
 Pull image: docker pull "id"/kkk:latest1
 Run: docker run -p 8888:8888 "id"/kkk
 
-Delete an Image: docker rmi "imageid"
+Delete an Image: docker image rmi "imageid"
+Forced delete: docker image rm -f "imageid"
 Remove all unused images: docker image prune 
+
+Checking for instance creation: docker ps
+Stop the runnin instance of image: docker stop "id"
+
 
