@@ -32,3 +32,24 @@ RUN pip install -r requirements.txt
 EXPOSE 5000
 CMD ["flask", "app.py"]"
 
+
+Explanation:
+
+This is how it works:
+Flask runs on 0.0.0.0:5000 inside container
+Accepts external traffic.
+Docker maps container port 5000 to your machine’s port 5000
+This is done using -p 5000:5000
+You visit http://localhost:5000 on your browser
+Docker forwards the request into the container → Flask handles it → sends back response.
+
+🔁 Without host="0.0.0.0"?
+If you don’t use host="0.0.0.0":
+
+Flask binds to 127.0.0.1 (localhost inside the container).
+
+Outside world (including your browser) can’t reach it — even if Docker maps the ports.
+
+So:
+
+You must use both --host=0.0.0.0 and -p 5000:5000 to make your app visible on localhost:5000.
