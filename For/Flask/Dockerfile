@@ -65,3 +65,10 @@ flask run
 It binds to 127.0.0.1 — which means:
 
 It's only accessible inside the container.
+
+
+| Syntax                  | Meaning                                          |
+| ----------------------- | ------------------------------------------------ |
+| hostPort\:containerPort | Forward hostPort to containerPort                |
+| 8501:5000               | Host listens on 8501 → Container listens on 5000 |
+
