@@ -18,3 +18,17 @@ ENV FLASK_APP=app.py
 
 # Run the Flask app
 CMD ["flask", "run", "--host=0.0.0.0"]
+
+
+
+# 2N ecample:
+
+FROM python: 3.10
+WORKDIR /code
+ENV FLASK_APP = app.py
+ENV FLASK_RUN_HOST = 0.0.0.0
+COPY . .
+RUN pip install -r requirements.txt
+EXPOSE 5000
+CMD ["flask", "app.py"]"
+
