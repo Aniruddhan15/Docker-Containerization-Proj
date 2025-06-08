@@ -1,0 +1,19 @@
+Install Docker Desktop
+Sign in to dockerhub and Docker Desktop
+Docker Desktop:
+ >> Check docker install: cli -> "docker"
+ >> Pull the image and run it
+
+
+Build Docker Image: docker build -t "id"/kkk .
+Run the container: docker run -p 8888:5080 "id"/kkk
+Tag image: docker tag SomethingUniquebuild "id"/
+docker login
+
+Push image to dockerhub: docker push "id"/kkk:latest1
+Pull image: docker pull "id"/kkk:latest1
+Run: docker run -p 8888:8888 "id"/kkk
+
+Delete an Image: docker rmi "imageid"
+Remove all unused images: docker image prune 
+
